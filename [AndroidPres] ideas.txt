@@ -1,0 +1,164 @@
+# Android #
+
+Brief history
+Operating System
+Application notions 
+  Activities
+  UI Building : Views and ViewGroups
+  Services
+  Intents
+  Fragments
+User Interface
+  ActionBar
+  Navigation: Up/Back
+Project Structure
+  Manifest
+  Sources
+  Resources
+Tools
+  Android Studio
+  Gradle
+  Play Store
+Useful Libs
+  RetroFit
+  Glide
+Advices
+  Material : transition and animations
+
+# History
+
+Android Inc: Andy Rubin/Rich Miner, Nick Sears, Chris White
+initial idea: OS for digital cameras
+"smarter mobile devices that are more aware of its owner's location and preferences"
+
+Problem : "the market for the devices was not large enough"
+-> Acquired by Google in 2005 for 50m€
+
+OHA: Effort to develop Android with industry leaders
+
+"As part of its efforts to promote a unified Android platform, 
+OHA members are contractually forbidden from producing devices 
+that are based on incompatible forks of Android"
+
+# The OS
+
+Applications
+App framework
+Libraries: libc, openssl, etc...
+Android Libraries: android.os, android.opengl, android.view...
+Runtime: virtual machine (Dalvik/ART)
+Kernel
+
+# Application notions
+
+Activities: Your apps building blocks
+"a component that provides a screen with which users
+can interact in order to do something"
+
+Views: 
+"the basic building block for user interface components."
+"A View occupies a rectangular area on the screen and is responsible for drawing and event handling"
+
+ViewGroups:
+"A ViewGroup is a special view that can contain other views (called children.)"
+Layouts: predefined ViewGroups
+
+## Services
+"A Service is an application component 
+that can perform long-running operations in the background 
+and does not provide a user interface."
+Background task / Scheduled task
+Interaction with other apps
+
+## Intent
+"An intent is an abstract description of an operation to be performed."
+Action + data (URI) + extras
+examples: 
+ACTION_VIEW tel:123
+ACTION_EDIT content://contacts/people/1
+ACTION_SEND + putExtra(Intent.EXTRA_TEXT, "“Each of us finds his unique vehicle for sharing with others his bit of wisdom.” ― Ram Dass")
+
+## Fragments
+"A Fragment represents a behavior or a portion of user interface in an Activity."
+You can see fragments as the building blocks of your application's visual organisation
+Reusable: use a fragment in multiple activities
+Modular: allows an activity to behave differently in different contexts (screen size, etc)
+Independant: own lifecycle, receives its own input events, can be added or removed while the activity is running
+
+# User Interface
+
+## Screen estate ; ActionBar and NavigationBar
+AppBar/ActionBar: 
+   "A dedicated space for giving your app an identity and indicating the user's location in the app."
+   "Access to important actions in a predictable way, such as search."
+   "Support for navigation and view switching (with tabs or drop-down lists)."
+
+## Material : transition and animations
+Transitions framework   
+Animations
+   
+# Project Structure
+
+## Manifest
+"The manifest file presents essential information about your app to the Android system"
+- Names the package
+- Describes the app structure: activities, services, broadcast receivers, content providers
+- Lists permissions of the app, intents it can handle
+- Declares minimul level of the Android API
+- Libraries linked against <uses-library>
+
+## Sources
+- Structured by java package
+- Open to other JVM-based languages (Kotlin♥, Clojure, Scala...)
+
+## Resources
+- Structure: Basic example
+- Overriding: System selection of adequate version
+- L10n/I18n made easy
+
+# Tools
+## Android Studio
+- IntelliJ IDEA: A solid basis (code analysis, powerful template engine, 
+numerous features like database access, deploy, or complex run configurations)
+- Android Lint code analysis
+- ProGuard and App signing capabilities
+- Built-in access to Google Services
+## Gradle
+
+## Play Store
+- Main platform to distribute apps
+- Needs an account (25$ for life)
+- Tools for store customisation (screenshots, description, rating, ...)
+- Beta deployment / elementary crash reporting
+- Not the only platform: 
+    - F-Droid for Free Software
+    - Decentralised repos: Aptoide 
+    - Centralised marketplaces: Amazon apps, Samsung apps, GetJar/Slide me/... 
+
+# Useful Libs
+## RetroFit
+- HTTP Api made easy: Build a service wrapper in a few steps
+## Glide
+- Picture loading made easy: Asynchronous, automatically loaded, animated
+## And others: Gson, EventBus, ButterKnife, LeakCanary, Crouton, RXJava, OkHttp...
+
+
+
+----------------------
+
+
+Images:
+
+Salah Aldemachki
+Clément Bourdin
+Sylvain Delarche
+Arnaud Dhennin
+Jonathan Gabriello
+Arnaud Gagne
+Tommy Lopes
+Étienne Marié
+Paul-Louis Nech
+Pierre Sabot
+Maxime Tavernier
+Kevin Waser
+David Zamani

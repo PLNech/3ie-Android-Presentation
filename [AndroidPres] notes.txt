@@ -1,0 +1,169 @@
+# HISTORY
+
+1: Android Inc: Andy Rubin/Rich Miner, Nick Sears, Chris White
+initial idea: OS for digital cameras
+"smarter mobile devices that are more aware of its owner's location and preferences"
+
+Problem : "the market for the devices was not large enough"
+2: -> Acquired by Google in 2005 for 50m€
+
+3: OHA: Effort to develop Android with industry leaders
+
+"As part of its efforts to promote a unified Android platform, 
+OHA members are contractually forbidden from producing devices 
+that are based on incompatible forks of Android“
+
+4: Versions
+
+# OS
+
+Applications
+App framework
+Libraries: BioNic (libc, libdl, libm…), openssl, webkit, etc...
+Android Libraries: android.os, android.opengl, android.view...`
+Runtime: virtual machine (Dalvik/ART)
+Kernel
+
+# Structure
+
+Manifest, Sources and resources
+
+## Manifest
+
+"The manifest file presents essential information about your app to the Android system"
+- Names the package
+- Describes the app components
+- Lists permissions of the app 
+- Declares minimul level of the Android API
+- Libraries linked against <uses-library>
+
+## Source
+
+1 Structured by java package
+2 Classical Java code
+3 Also open to other JVM-based languages (Kotlin♥, Clojure, Scala...)
+
+## Resources
+
+1 Structure: Basic example
+2 But what if you want a different layout on mobile and tablet? Or different images?
+3 Introducing automated resource selection
+4 Exemple of folder hierarchy
+5 Exemple of selector categories
+6 Real-world example
+
+- L10n/I18n made easy
+
+# Essential Notions
+
+## Activities
+
+1 XML
+2 Java
+3 Result
+4 Lifecycle
+
+## Views
+
+"the basic building block for user interface components.“
+1 XML : ID, attributes
+2 Code: findById, manipulation (onclicklistener)
+3 Rendered
+
+## ViewGroups
+
+"A ViewGroup is a special view that can contain other views (called children.)"
+Layouts: predefined ViewGroups
+
+## Services
+
+"A Service is an application component 
+that can perform long-running operations in the background 
+and does not provide a user interface."
+
+Background task / Scheduled task
+
+1 Code: RSSPull example
+2 Manifest: declaration
+Interaction with other apps
+
+## Intents
+
+"The description of an operation to be performed"
+Action + data (URI) + extras
+
+ACTION_VIEW tel:123
+ACTION_EDIT content://contacts/people/1
+ACTION_SEND + putExtra(Intent.EXTRA_TEXT, “The Game”)
+
+
+1: Example opening a link with capable apps
+2: Declaring intent filters on activities
+3: Starting a service Service: action + extras
+4: Starting another activitry through intent
+
+## Fragments
+
+You can see fragments as the building blocks of your application's visual organization
+1: Imagine a contact app: list & detail in tablet as A, but in phone A + B… use fragments!
+
+2: Structured as an activity
+3: Can be included in activity’s xml…
+4: …or dynamically loaded in code
+
+Reusable: use a fragment in multiple activities
+Modular: allows an activity to behave differently in different contexts
+Independant: own lifecycle, receives its own input events, can be added or removed while the activity is running
+
+## AppBar and Navigation
+
+1: Nav icon (Hamburger) | Title/Filter icon | Action icons | Menu icon
+Used for Navigation, Branding, and some actions.
+Navigation : mail app, detail, next -> back/top?
+2: XML Declaration
+3: onOptionsSelected implementation
+4: Branding: see examples
+
+# Material
+
+1 
+Material metaphor
+Intentional design, graphical and colourful
+Meaning-driven design
+
+2 Animations
+Transitions Framework
+Lgvalle’s Material Animations
+
+# Tools
+
+## Android Studio
+
+- IntelliJ IDEA: A solid basis (code analysis, powerful template engine, 
+numerous features like database access, deploy, or complex run configurations)
+- Android Lint code analysis
+- ProGuard and App signing capabilities
+- Built-in access to Google Services
+
+## Gradle
+
+Mostly for dependency management and build
+Groovy-based build system
+Large API yet easy to extend
+Easy to integrate with other build tools/systems (Ivy, Jenkins…)
+
+## PlayStore
+
+1 Main platform to distribute apps
+   Needs an account (25$ for life)
+2 Tools for store management/customisation : ratings…
+3 API version statistics
+4 play store listing editing
+5 Certification program (PEGI, etc)
+6 Beta deployment / elementary crash reporting
+7 Not the only platform: -  
+F-Droid for Free Software
+Decentralised repos: Aptoide 
+Centralised marketplaces: Amazon apps, Samsung apps, GetJar/Slide me/... 
+
+# Useful Libraries
